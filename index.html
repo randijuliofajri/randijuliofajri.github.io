@@ -478,6 +478,12 @@
           </div>
         </div>
       </div>
+      <div class="section">
+        <div class="container">
+          <div class="h4 mb-4 text-center title">Gallery</div>
+          <div id="instagram-feed1" class="instagram_feed" data-aos="fade-left"></div>
+        </div>
+      </div>
       <div class="section" id="reference">
         <div class="container cc-reference">
           <div class="h4 mb-4 text-center title">References</div>
@@ -631,11 +637,33 @@
     </div>
   </footer>
   <script src="js/core/jquery.3.2.1.min.js"></script>
+  <script src="js/instafeed.js"></script>
   <script src="js/core/popper.min.js"></script>
   <script src="js/core/bootstrap.min.js"></script>
   <script src="js/now-ui-kit.js?v=1.1.0"></script>
   <script src="js/aos.js"></script>
   <script src="scripts/main.js"></script>
+  <script>
+    (function ($) {
+      $(window).on('load', function () {
+        $.instagramFeed({
+          'username': 'randijuliofajri',
+          'container': "#instagram-feed1",
+          'display_profile': false,
+          'display_biography': true,
+          'display_gallery': true,
+          'display_captions': false,
+          'callback': null,
+          'styling': true,
+          'items': 8,
+          'items_per_row': 4,
+          'margin': 1,
+          'lazy_load': true,
+          'on_error': console.error
+        });
+      });
+    })(jQuery);
+  </script>
 </body>
 
 </html>
